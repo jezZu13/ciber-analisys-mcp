@@ -1,0 +1,33 @@
+[project]
+name = "ciber-analysis-mcp-server"
+version = "1.0.0"
+description = "MCP Server for cybersecurity intelligence: Shodan, nmap port scanning, IP geolocation, DNS lookup, reputation checking, and WHOIS"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Security Intelligence Team"}
+]
+keywords = ["mcp", "shodan", "security", "network", "scanning", "nmap", "cybersecurity", "ip-analysis"]
+
+dependencies = [
+    "mcp>=1.16.0",
+    "httpx>=0.28.1",
+    "uvicorn>=0.37.0",
+    "starlette>=0.48.0",
+    "dnspython>=2.8.0",
+    "python-whois>=0.9.5"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = []
