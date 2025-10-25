@@ -1,3 +1,7 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
 name = "ciber-analysis-mcp-server"
 version = "1.0.0"
@@ -19,29 +23,15 @@ dependencies = [
     "python-whois>=0.9.5"
 ]
 
+# ⭐ ESTO ES LO QUE FALTA - Crea el comando ejecutable
+[project.scripts]
+ciber-analisys-mcp = "ciber_analisys_mcp:main"
+
 [project.optional-dependencies]
 dev = [
     "pytest",
     "pytest-asyncio"
 ]
 
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
 [tool.hatch.build.targets.wheel]
-packages = ["."]
-include = [
-    "ciber-analisys-mcp-server.py"
-]
-
-[tool.hatch.build.targets.sdist]
-include = [
-    "ciber-analisys-mcp-server.py",
-    "README.md",
-    "LICENSE",
-    "pyproject.toml"
-]
-
-[tool.uv]
-dev-dependencies = []
+packages = ["src/ciber_analisys_mcp"]

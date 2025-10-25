@@ -629,22 +629,29 @@ app = Starlette(
 )
 
 
+#if __name__ == "__main__":
+#    print("🚀 Servidor MCP Shodan Security Agent iniciando...")
+#    print(f"🔑 Shodan API Key: {'✅ Configurada' if SHODAN_API_KEY else '❌ No configurada'}")
+#    print(f"🔑 AbuseIPDB API Key: {'✅ Configurada' if os.getenv('ABUSEIPDB_API_KEY') else '⚠️  No configurada (opcional)'}")
+#    print(f"🌐 SSE endpoint: http://localhost:8003/sse")
+#    print(f"\n📡 Herramientas disponibles (7 tools):")
+#    print(f"   🔍 Port Scanning & Reconnaissance:")
+#    print(f"      - nmap_port_scan (escaneo en tiempo real, requiere nmap) ⭐ NUEVO")
+#    print(f"      - get_host_info (requiere Shodan API key)")
+#    print(f"   🌍 Geolocalización & Red:")
+#    print(f"      - geolocate_ip (gratuito, 45 req/min)")
+#    print(f"      - dns_lookup (gratuito, ilimitado)")
+#    print(f"   🛡️ Seguridad:")
+#    print(f"      - check_ip_reputation (AbuseIPDB)")
+#    print(f"      - whois_lookup (gratuito)")
+#    print(f"   🔧 Utilidades:")
+#    print(f"      - get_my_ip (gratuito)")
+#    print(f"\n✅ Servidor listo para conexiones MCP")
+#    uvicorn.run(app, host="localhost", port=8003)
+def main():
+    """Entry point for the CLI command"""
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8080)
+
 if __name__ == "__main__":
-    print("🚀 Servidor MCP Shodan Security Agent iniciando...")
-    print(f"🔑 Shodan API Key: {'✅ Configurada' if SHODAN_API_KEY else '❌ No configurada'}")
-    print(f"🔑 AbuseIPDB API Key: {'✅ Configurada' if os.getenv('ABUSEIPDB_API_KEY') else '⚠️  No configurada (opcional)'}")
-    print(f"🌐 SSE endpoint: http://localhost:8003/sse")
-    print(f"\n📡 Herramientas disponibles (7 tools):")
-    print(f"   🔍 Port Scanning & Reconnaissance:")
-    print(f"      - nmap_port_scan (escaneo en tiempo real, requiere nmap) ⭐ NUEVO")
-    print(f"      - get_host_info (requiere Shodan API key)")
-    print(f"   🌍 Geolocalización & Red:")
-    print(f"      - geolocate_ip (gratuito, 45 req/min)")
-    print(f"      - dns_lookup (gratuito, ilimitado)")
-    print(f"   🛡️ Seguridad:")
-    print(f"      - check_ip_reputation (AbuseIPDB)")
-    print(f"      - whois_lookup (gratuito)")
-    print(f"   🔧 Utilidades:")
-    print(f"      - get_my_ip (gratuito)")
-    print(f"\n✅ Servidor listo para conexiones MCP")
-    uvicorn.run(app, host="localhost", port=8003)
+    main()
